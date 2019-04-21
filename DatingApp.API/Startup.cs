@@ -36,6 +36,8 @@ namespace DatingApp.API
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddCors();
 
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
+
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IDatingRepository, DatingRepository>();
             services.AddTransient<Seed>();
